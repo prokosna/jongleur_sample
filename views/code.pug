@@ -1,0 +1,47 @@
+extends layout
+
+block content
+    h1 Authorization Code Flow
+    h2 1. Request (Authorize)
+        div
+            textarea(rows=8 cols=120)= `GET: ${reqUri || ''}`
+    h2 2. Redirected with code
+        div URI
+            textarea(rows=8 cols=120)= `GET: ${redirectedUri || ''}`
+        div Query Parameters
+            textarea(rows=8 cols=120)= redirectedContent || ''
+    h2 3. Request (Get tokens)
+        div URI
+            textarea(rows=8 cols=120)= `POST: ${tokenReqUri || ''}`
+        div Headers
+            textarea(rows=8 cols=120)= `HEADERS: ${tokenReqHeaders || ''}`
+        div Body
+            textarea(rows=8 cols=120)= tokenReqContent || ''
+    h2 4. Response (Tokens)
+        div Body
+            textarea(rows=8 cols=120)= tokenResContent || ''
+    h2 5. Request (User Info)
+        div URI
+            textarea(rows=8 cols=120)= `GET: ${userUri || ''}`
+        div Headers
+            textarea(rows=8 cols=120)= `HEADERS: ${userHeaders || ''}`
+    h2 6. Response (User Info)
+        div Body
+            textarea(rows=8 cols=120)= userResContent || ''
+    h2 7. Request (Get the key and Decode)
+        div URI
+            textarea(rows=8 cols=120)= `GET: ${keyUri || ''}`
+        div Key
+            textarea(rows=8 cols=120)= keyContent || ''
+        div Decoded ID Token
+            textarea(rows=8 cols=120)= `Decoded: ${decodedUser || ''}`
+    h2 8. Request (Introspect)
+        div URI
+            textarea(rows=8 cols=120)= `GET: ${introspectUri || ''}`
+        div Headers
+            textarea(rows=8 cols=120)= `HEADERS: ${introspectReqHeaders || ''}`
+        div Body
+            textarea(rows=8 cols=120)= introspectReqContent || ''
+    h2 8. Response (Introspect)
+        div Body
+            textarea(rows=8 cols=120)= introspectResContent || ''

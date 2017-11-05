@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    h1 Jongleur Sample
+    p This is an extremely simple sample using Jongleur.
+    div
+        form(method="POST" action="/exec")
+            p Sample URI (protocol://host:port):
+                input(type="text" name="sample")
+            p Provider URI (protocol://host:port):
+                input(type="text" name="uri")
+            p Sample Client ID:
+                input(type="text" name="client")
+            p Sample Client Secret:
+                input(type="text" name="secret")
+            p Sample EndUser Name:
+                input(type="text" name="user")
+            p Sample EndUser Password:
+                input(type="text" name="password")
+            button(type="submit" name="action" value="code") Authorization Code
+            br
+            button(type="submit" name="action" value="implicit") Implicit
+            br
+            button(type="submit" name="action" value="client") Client Credentials (Not OIDC)
+            br
+            button(type="submit" name="action" value="password") Resource Owner Password Credentials (Not OIDC)

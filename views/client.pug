@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1 Client Credentials
+    h2 1. Request (Authorize)
+        div URI
+            textarea(rows=8 cols=120)= reqUri
+        div Headers
+            textarea(rows=8 cols=120)= reqHeaders
+        div Body
+            textarea(rows=8 cols=120)= reqBody
+    h2 2. Response
+        div Body
+            textarea(rows=8 cols=120)= resBody

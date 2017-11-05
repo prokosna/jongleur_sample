@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    h1 Implicit Flow
+    h2 1. Request (Authorize)
+        div URI
+            textarea(rows=8 cols=120)= reqUri
+    h2 2. Redirected
+        div URI
+            textarea#redirectedUri(rows=8 cols=120)
+        div Query Parameters
+            textarea#redirectedContent(rows=8 cols=120)
+
+block script
+    script
+        include ../public/javascripts/implicit.js
