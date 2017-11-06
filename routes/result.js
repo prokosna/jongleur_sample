@@ -13,7 +13,7 @@ router.get('/code', (req, res, next) => {
     // error
     res.render('code', params)
     return
-  }confidential
+  }
   const { code } = req.query
 
   // Request for tokens
